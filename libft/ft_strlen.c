@@ -6,15 +6,15 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 13:43:53 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/07 13:46:36 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/11 16:20:01 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char	*str)
+size_t	ft_strlen(char const *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
