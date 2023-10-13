@@ -6,19 +6,26 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:57:36 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/11 14:40:25 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/13 18:14:01 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(char const *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
-	while (*str)
+	char	chg_c;
+	int		i;
+
+	i = 0;
+	chg_c = (unsigned char)c;
+	while (str[i])
 	{
-		if (*str == char (c))
-			return (str);
-		str++;
+		if (str[i] == chg_c)
+			return ((char *)&str[i]);
+		i++;
 	}
+	if (str[i] == chg_c)
+		return ((char *)&str[i]);
 	return (0);
 }

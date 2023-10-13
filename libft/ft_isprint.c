@@ -6,7 +6,7 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:53:59 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/10 14:14:19 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/13 17:37:34 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isprint(int num)
 {
-	if (num > 32 && num < 127)
-		return (1);
+	if (num >= 32 && num <= 126)
+		return (num);
 	return (0);
 }

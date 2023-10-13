@@ -6,7 +6,7 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:14:04 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/10 18:50:59 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/13 17:29:21 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	dest[i] = '\0';
 	return (dest);
 }
-
-/*
-int main()
-{
-    char src[] = "substr function Implementation";
-
-    int m = 7;
-    int n = 12;
-
-    char* dest = ft_substr(src, m, n);
-    printf("%s\n", dest);
-    return 0;
-}
-*/

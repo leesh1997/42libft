@@ -6,27 +6,25 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:15:20 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/11 17:20:57 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/13 19:30:31 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	num_len(int num)
+int	num_len(long long num)
 {
-	int			cnt;
-	long long	num2;
+	int	cnt;
 
-	cnt = 1;
-	num2 = num;
-	if (num2 < 0)
+	cnt = 0;
+	if (num <= 0)
 	{
-		num2 *= -1;
+		num *= -1;
 		cnt++;
 	}
-	while (num2 > 0)
+	while (num > 0)
 	{
-		num2 /= 10;
+		num /= 10;
 		cnt++;
 	}
 	return (cnt);
@@ -34,22 +32,28 @@ int	num_len(int num)
 
 char	*ft_itoa(int n)
 {
-	char		*arr;
-	int			i;
-	int			len;
+	char	*arr;
+	int		len;
+	long	num;
 
-	i = 0;
 	len = num_len(n);
+	num = n;
 	arr = (char *)malloc(sizeof(char) * (len + 1));
+	arr[len--] = '\0';
 	if (!arr)
 		return (0);
-	if (n < 0)
-		arr[i++] = '-';
-	while (i++ <= len)
+	if (num < 0)
 	{
-		arr[len - i] = (n % 10) + '0';
-		n /= 10;
+		arr[0] = '-';
+		num *= -1;
 	}
-	arr[len] = '\0';
+	if (num == 0)
+		arr[0] = '0';
+	while (num > 0)
+	{
+		arr[len] = num % 10 + '0';
+		num /= 10;
+		len--;
+	}
 	return (arr);
 }

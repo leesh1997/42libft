@@ -6,7 +6,7 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:03:30 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/10 15:50:38 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/13 18:21:46 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	while (*str)
-		str++;
-	while (*str)
+	int	i;
+
+	i = ft_strlen(str);
+	while (i >= 0)
 	{
-		if (*str == char (c))
-			return (str);
-		str--;
+		if (str[i] == (unsigned char)c)
+			return ((char *)str + i);
+		i--;
 	}
 	return (0);
 }

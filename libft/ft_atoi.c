@@ -6,7 +6,7 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:53:13 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/10 16:55:16 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/13 18:36:36 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,13 @@ int	ft_atoi(char *str)
 	temp = 0;
 	while ((str[idx] >= 9 && str[idx] <= 13) || str[idx] == 32)
 		idx++;
-	while (str[idx] == '-' || str[idx] == '+')
+	if (str[idx] == '-')
 	{
-		if (str[idx] == '-')
-			minus++;
+		minus++;
 		idx++;
 	}
+	else if (str[idx] == '+')
+		idx++;
 	while (str[idx] >= 48 && str[idx] <= 57)
 	{
 		temp = temp * 10 + str[idx] - '0';

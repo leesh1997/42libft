@@ -6,13 +6,13 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 13:57:33 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/11 15:12:16 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/13 18:52:58 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	cnt_word(char const *s, char c)
+int	cnt_word(const char *s, char c)
 {
 	int	i;
 	int	cnt;
@@ -32,7 +32,7 @@ int	cnt_word(char const *s, char c)
 	return (cnt);
 }
 
-char	*result(char *str, char c)
+char	*result(const char *str, char c)
 {
 	int		str_len;
 	int		i;
@@ -54,7 +54,7 @@ char	*result(char *str, char c)
 	return (result_str);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	char	**arr;
 	int		i;
@@ -65,13 +65,15 @@ char	**ft_split(char const *s, char c)
 	arr_i = 0;
 	size = cnt_word(s, c);
 	arr = (char **)malloc(sizeof(char *) * (size + 1));
-	while (*(str + i))
+	if (!arr)
+		return (0);
+	while (*(s + i))
 	{
-		while (*(str + i) && *(str + i) == c)
+		while (*(s + i) && *(s + i) == c)
 			i++;
-		if (*(str + i) && *(str + i) == c)
-			arr[arr_i++] = result((str + i), c);
-		while (*(str + i) && *(str + i) != c)
+		if (*(s + i) && *(s + i) != c)
+			arr[arr_i++] = result((s + i), c);
+		while (*(s + i) && *(s + i) != c)
 			i++;
 	}
 	arr[arr_i] = 0;
