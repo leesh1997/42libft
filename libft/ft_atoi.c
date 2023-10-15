@@ -6,13 +6,13 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:53:13 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/13 18:36:36 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/15 16:51:27 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	idx;
 	int	minus;
@@ -35,7 +35,7 @@ int	ft_atoi(char *str)
 		temp = temp * 10 + str[idx] - '0';
 		idx++;
 	}
-	if (minus % 2 == 1)
+	if (minus == 1)
 		temp *= -1;
 	return (temp);
 }

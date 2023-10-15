@@ -6,21 +6,23 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 13:57:33 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/13 18:52:58 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/15 18:42:13 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	cnt_word(const char *s, char c)
+size_t	cnt_word(const char *s, char c)
 {
-	int	i;
-	int	cnt;
-	int	flag;
+	size_t	i;
+	size_t	cnt;
+	size_t	flag;
+	size_t	s_len;
 
 	i = 0;
 	cnt = 1;
 	flag = 0;
+	s_len = ft_strlen(s);
 	while (s[i])
 	{
 		if (flag == 1 && s[i] == c && s[i + 1] != c)
@@ -28,21 +30,37 @@ int	cnt_word(const char *s, char c)
 		else if (s[i] != c)
 			flag = 1;
 		i++;
+		if (i + 1 == s_len)
+			return (cnt);
 	}
 	return (cnt);
 }
 
+char	**split_free(char **s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+	return (0);
+}
+
 char	*result(const char *str, char c)
 {
-	int		str_len;
-	int		i;
+	size_t	str_len;
+	size_t	i;
 	char	*result_str;
 
 	str_len = 0;
 	while (*(str + str_len) && str[str_len] != c)
 		str_len++;
-	result_str = (char *)malloc(sizeof(char) * str_len + 1);
-	if (result_str == 0)
+	result_str = (char *)malloc(sizeof(char) * (str_len + 1));
+	if (!result_str)
 		return (0);
 	i = 0;
 	while (i < str_len)
@@ -57,14 +75,12 @@ char	*result(const char *str, char c)
 char	**ft_split(const char *s, char c)
 {
 	char	**arr;
-	int		i;
-	int		arr_i;
-	int		size;
+	size_t	i;
+	size_t	arr_i;
 
 	i = 0;
 	arr_i = 0;
-	size = cnt_word(s, c);
-	arr = (char **)malloc(sizeof(char *) * (size + 1));
+	arr = (char **)malloc(sizeof(char *) * (cnt_word(s, c) + 1));
 	if (!arr)
 		return (0);
 	while (*(s + i))
@@ -72,7 +88,11 @@ char	**ft_split(const char *s, char c)
 		while (*(s + i) && *(s + i) == c)
 			i++;
 		if (*(s + i) && *(s + i) != c)
-			arr[arr_i++] = result((s + i), c);
+		{
+			arr[arr_i] = result((s + i), c);
+			if (arr[arr_i++] == 0)
+				return (split_free(arr));
+		}
 		while (*(s + i) && *(s + i) != c)
 			i++;
 	}
