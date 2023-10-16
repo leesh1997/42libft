@@ -6,7 +6,7 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 13:57:33 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/15 18:42:13 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/16 14:41:26 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ size_t	cnt_word(const char *s, char c)
 			flag = 1;
 		i++;
 		if (i + 1 == s_len)
-			return (cnt);
+			break ;
 	}
+	if (flag == 0)
+		cnt = 0;
 	return (cnt);
 }
 

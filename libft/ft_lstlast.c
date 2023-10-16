@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 17:59:24 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/16 18:19:59 by seunghun         ###   ########.fr       */
+/*   Created: 2023/10/16 15:41:20 by seunghun          #+#    #+#             */
+/*   Updated: 2023/10/16 17:10:53 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t n, size_t size)
+t_list	*ft_lstlast(t_list *lst)
 {
-	void	*temp;
-
-	temp = malloc(n * size);
-	if (temp == 0)
+	if (!lst)
 		return (0);
-	ft_memset(temp, 0, n * size);
-	return (temp);
+	while (lst)
+	{
+		lst = lst -> next;
+	}
+	return (lst);
 }
