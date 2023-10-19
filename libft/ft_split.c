@@ -6,13 +6,13 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 13:57:33 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/16 14:41:26 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:08:24 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	cnt_word(const char *s, char c)
+static size_t	cnt_word(const char *s, char c)
 {
 	size_t	i;
 	size_t	cnt;
@@ -38,7 +38,7 @@ size_t	cnt_word(const char *s, char c)
 	return (cnt);
 }
 
-char	**split_free(char **s)
+static char	**split_free(char **s)
 {
 	size_t	i;
 
@@ -49,10 +49,10 @@ char	**split_free(char **s)
 		i++;
 	}
 	free(s);
-	return (0);
+	return (s = 0);
 }
 
-char	*result(const char *str, char c)
+static char	*result(const char *str, char c)
 {
 	size_t	str_len;
 	size_t	i;

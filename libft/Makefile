@@ -6,7 +6,7 @@
 #    By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 16:30:04 by seunghun          #+#    #+#              #
-#    Updated: 2023/10/17 15:16:16 by seunghun         ###   ########.fr        #
+#    Updated: 2023/10/19 15:32:45 by seunghun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME		=	libft.a
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
 
-RM			=	rm -f
+RM			=	rm
+RMFLAGS		=	-f
 
 AR			=	ar
 ARFLAGS		=	rcs
@@ -48,20 +49,26 @@ OBJS		=	$(SRCS:.c=.o)
 
 OBJSBONUS	=	$(SRCSBONUS:.c=.o)
 
+ifdef WITH_BONUS
+	OBJ = $(OBJS) $(OBJSBONUS)
+else
+	OBJ = $(OBJS)
+endif
+
 all : $(NAME)
 
-$(NAME) : $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+$(NAME) : $(OBJ)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus : $(OBJSBONUS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJSBONUS)
+bonus :
+	make WITH_BONUS=1 all
 
 clean :
-	$(RM) $(OBJS) $(OBJSBONUS)
+	$(RM) $(RMFLAGS) $(OBJS) $(OBJSBONUS)
 fclean : clean
-	$(RM) $(NAME)
+	$(RM) $(RMFLAGS) $(NAME)
 re : fclean all
 
 .PHONY : all bonus clean fclean re

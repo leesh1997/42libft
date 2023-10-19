@@ -6,7 +6,7 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:54:47 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/17 16:27:46 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/18 18:51:59 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last_back;
 
-	last_back = *lst;
-	if (!*lst && new)
+	if (!*lst)
 	{
 		*lst = new;
 		return ;

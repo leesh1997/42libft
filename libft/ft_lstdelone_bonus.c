@@ -6,7 +6,7 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:07:49 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/17 17:24:47 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:25:15 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (!lst || !del)
+	if (lst || del)
+	{
+		(*del)(lst -> content);
+		free(lst);
+	}
+	else
 		return ;
-	(*del)(lst -> content);
-	free(lst);
 }

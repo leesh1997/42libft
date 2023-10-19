@@ -6,7 +6,7 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 17:45:50 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/13 17:00:30 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/18 18:54:50 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_memcmp(void *s1, void *s2, size_t n)
 	while (i < n)
 	{
 		if (str1[i] != str2[i])
-			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+			return (str1[i] - str2[i]);
 		i++;
 	}
 	return (0);

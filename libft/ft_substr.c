@@ -6,7 +6,7 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:14:04 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/15 16:05:53 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:19:12 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*dest;
-	unsigned int	s_len;
-	size_t			i;
-	size_t			mal_len;
+	char	*dest;
+	size_t	s_len;
+	size_t	i;
+	size_t	mal_len;
 
 	s_len = ft_strlen(s);
 	if (s_len < (start + len))

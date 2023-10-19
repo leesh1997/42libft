@@ -6,7 +6,7 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:53:13 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/15 16:51:27 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:41:26 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	idx;
-	int	minus;
-	int	temp;
+	size_t	idx;
+	int		minus;
+	int		temp;
 
 	idx = 0;
 	minus = 0;

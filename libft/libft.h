@@ -6,7 +6,7 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 14:54:50 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/16 18:34:24 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:08:51 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
 int			ft_isprint(int num);
-int			num_len(long long num);
 char		*ft_itoa(int n);
 void		*ft_memchr(void *src, int c, size_t n);
 int			ft_memcmp(void *s1, void *s2, size_t n);
@@ -35,9 +34,6 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 void		ft_putstr_fd(char *s, int fd);
-size_t		cnt_word(const char *s, char c);
-char		**split_free(char **s);
-char		*result(const char *str, char c);
 char		**ft_split(const char *s, char c);
 char		*ft_strchr(const char *str, int c);
 char		*ft_strdup(char *src);

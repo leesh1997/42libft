@@ -6,7 +6,7 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:16:48 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/15 16:43:48 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/18 18:30:57 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (dest == src)
+	if (!dest && !src)
 		return (dest);
 	while (i < n)
 	{

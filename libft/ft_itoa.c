@@ -6,13 +6,13 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:15:20 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/15 15:41:58 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/18 19:07:39 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	num_len(long long num)
+static int	num_len(long long num)
 {
 	int	cnt;
 
