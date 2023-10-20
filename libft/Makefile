@@ -6,7 +6,7 @@
 #    By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 16:30:04 by seunghun          #+#    #+#              #
-#    Updated: 2023/10/19 15:32:45 by seunghun         ###   ########.fr        #
+#    Updated: 2023/10/20 15:12:11 by seunghun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,6 +69,8 @@ clean :
 	$(RM) $(RMFLAGS) $(OBJS) $(OBJSBONUS)
 fclean : clean
 	$(RM) $(RMFLAGS) $(NAME)
-re : fclean all
+re : 
+	make fclean
+	make all
 
 .PHONY : all bonus clean fclean re
