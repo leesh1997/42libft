@@ -6,7 +6,7 @@
 /*   By: seunghun <seunghun@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:15:20 by seunghun          #+#    #+#             */
-/*   Updated: 2023/10/18 19:07:39 by seunghun         ###   ########.fr       */
+/*   Updated: 2023/10/22 16:18:36 by seunghun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ char	*ft_itoa(int n)
 	arr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!arr)
 		return (0);
-	arr[len--] = '\0';
+	arr[len] = '\0';
+	len--;
 	if (num < 0)
 	{
 		arr[0] = '-';
